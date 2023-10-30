@@ -1,7 +1,15 @@
 package com.example.mad_assignment_2_21012011079
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,7 +63,8 @@ class MainActivity : AppCompatActivity() {
         object :CountDownTimer(duration, 1000) {
             override fun onTick(millisUntilFinished: Long) {
 
-                var sDuration:String= String.format(Locale.ENGLISH,
+                var sDuration:String= String.format(
+                    Locale.ENGLISH,
                     "%02d:%02d",
                     TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
                     TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)-TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)))
